@@ -2,29 +2,53 @@
 title: "ejercicio"
 author: "seyhun"
 date: "6/28/2019"
-output: html_document
+output:
+  pdf_document: default
+  word_document: default
+  html_document: default
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# Title:RMarkdown Exercise
+
+## Abstract  
+
+I am creating an rmarkdown document
+
+## Introduction 
+
+bla bla bla
+
+## Material and Methods
+
+### Participants
+
+A lot of parcitipants participated 
+
+### Materials
+
+We used very cool tools
+
+## Results
+
+We are awesome scientists
+
+### Exp I
+
+Controls thought the experiment was fun
+  
+### Exp II 
+
+Patients also thought the experiment was fun
+  
+## Discussion
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='asis'}
+library(stringi)
+stri_rand_lipsum(nparagraphs = 1)
 ```
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+# Bibliography
 
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+  
