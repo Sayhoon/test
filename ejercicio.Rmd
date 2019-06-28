@@ -30,6 +30,32 @@ We used very cool tools
 
 ## Results
 
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+library(haven)
+Cancer_screening_risk_literacy_R1 <- read_sav("C:/Users/fustun/Desktop/githubproject/Cancer screening risk literacy R1.sav")
+data=Cancer_screening_risk_literacy_R1 
+
+corr_test = cor.test(data$screenbeliefs,data$numeracy, method = "spearman")
+
+library (tidyverse)
+
+
+#remotes::install_github("easystats/correlation")
+# remotes::install_github("easystats/report")
+require("correlation")
+require("report")
+table <- data %>% 
+   select(numeracy,sciliteracy, knowlR1, compR1, benefits, harms, recommendation ) %>% 
+    correlation() %>% 
+    report() %>% 
+    to_table()
+  
+  knitr::kable(table)
+
+```
+
+
 We are awesome scientists
 
 ### Exp I
@@ -46,7 +72,6 @@ Patients also thought the experiment was fun
 library(stringi)
 stri_rand_lipsum(nparagraphs = 1)
 ```
-
 
 
 # Bibliography
